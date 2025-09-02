@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import firebase_admin
 from firebase_admin import credentials, db
@@ -9,6 +9,7 @@ import random
 
 app = Flask(__name__)
 CORS(app)
+
 
 # Firebase konfiguratsiyasi
 firebase_config = {
@@ -52,6 +53,10 @@ def validate_phone(phone):
     return phone.startswith('+998') and len(phone) == 13
 
 # API endpoints
+@app.route("/")
+def home():
+    return render_template("index.html")
+    
 @app.route('/api/login', methods=['POST'])
 def login():
     try:
