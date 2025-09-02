@@ -1,0 +1,24 @@
+# Python cache va virtual env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+.venv/
+env/
+venv/
+
+# Firebase service account kaliti
+serviceAccountKey.json
+
+# IDE fayllari
+.vscode/
+.idea/
+
+# OS fayllari
+.DS_Store
+Thumbs.db
+
+# Log fayllari
+*.log
